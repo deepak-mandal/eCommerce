@@ -1,0 +1,65 @@
+{% extends 'store/index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="row col-xs-12   ">
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>Shipping Information</h4>
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="name" placeholder="Name">
+                    <input type="text" class="form-control" name="email" placeholder="Email">
+                    <textarea type="text" row="10" col="30" class="form-control" name="address" placeholder="Address"></textarea>
+                    <input type="text" class="form-control" name="city" placeholder="City">
+                    <input type="text" class="form-control" name="state" placeholder="State">
+                    <input type="text" class="form-control" name="zipcode" placeholder="Zipcode">
+                    <input type="text" class="form-control" name="country" placeholder="Country">
+
+
+                </div>
+                <div class="panel-footer">
+                    <button id="formButton" class="btn btn-success">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <a class="btn btn-warning" href="{% url 'cart' %}">&#x2190 Back to cart</a>
+                
+                </div>
+                <div class="panel-body">
+
+
+                    <h3>Order Summary</h3>
+                    <table class="table">
+                        <td style="flex:2 "><img class="row-image" src="{% static 'store/images/cart.jpg' %}"></td>
+                        <td style="flex:2">Product</td>
+                        <td style="flex:1">$20</td>
+                        <td style="flex:1"><p>x2</p></td>
+
+                    </table>
+
+                </div>
+                <div class="panel-footer">
+                    <h5>Items: 2</h5>
+                    <h5><strong>Total: $40</strong></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+{% endblock content %}
+
+
+
