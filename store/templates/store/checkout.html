@@ -31,24 +31,26 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <a class="btn btn-warning" href="{% url 'cart' %}">&#x2190 Back to cart</a>
-                
+
                 </div>
                 <div class="panel-body">
 
 
                     <h3>Order Summary</h3>
+                    {% for item in items %}
                     <table class="table">
-                        <td style="flex:2 "><img class="row-image" src="{% static 'store/images/cart.jpg' %}"></td>
-                        <td style="flex:2">Product</td>
-                        <td style="flex:1">$20</td>
-                        <td style="flex:1"><p>x2</p></td>
+                        <td style="flex:2 "><img class="row-image" src="{{item.product.image.url}}"></td>
+                        <td style="flex:2">{{item.product.name}}</td>
+                        <td style="flex:1">${{item.product.price}}</td>
+                        <td style="flex:1"><p>x{{item.quantity}}</p></td>
 
                     </table>
+                    {% endfor %}
 
                 </div>
                 <div class="panel-footer">
-                    <h5>Items: 2</h5>
-                    <h5><strong>Total: $40</strong></h5>
+                    <h5>Items: {{order.get_cart_items}}</h5>
+                    <h5><strong>Total: ${{order.get_cart_total}}</strong></h5>
                 </div>
             </div>
         </div>

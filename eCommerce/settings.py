@@ -129,10 +129,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-'''
+
 #for css
 import os
-STATICFILE_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+
+#for css
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'store/static/store')
 ]
-'''
+
+#for image to be stored at static/images folder
+MEDIA_URL='/images/'
+
+MEDIA_ROOT=os.path.join(BASE_DIR, 'store/static/store/images')
+
