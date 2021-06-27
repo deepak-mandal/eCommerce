@@ -37,6 +37,14 @@
 
 
 
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+    </script>
+
+
+
+
+
 </head>
 <body>
     <!--Template which all will inherit from-->
@@ -49,6 +57,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!--
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'store' %}">Store<span class="sr-only"></span></a>
@@ -56,7 +65,7 @@
 
 
             </ul>
-
+            -->
             <form class="form-inline my-2 my-lg-0">
                 <a href="#" class="btn btn-warning">Login</a>
                     <a href="{% url 'cart' %}"><img id="cart-icon" src="{% static 'store/images/cart.png' %}"></a>
@@ -85,15 +94,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 </body>
+    <script type="text/javascript" src="{% static 'store/cart.js' %}"></script>
+
+
+
+
 </html>
