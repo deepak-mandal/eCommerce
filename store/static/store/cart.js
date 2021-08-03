@@ -25,24 +25,22 @@ for(var i=0; i<updateBtns.length; i++){
 function updateUserOrder(productId, action){
     console.log('User id logged in, sending data..')
 
-
-    //featch API
-    var url = '/update_item/'
+    var url='/update_item/'
 
     fetch(url, {
-        method:'POST',
-        //passing the data
+        method: 'POST',
         headers:{
-            'Content-Type':'application/json'
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken,
         },
-        body: JSON.stringify({'productId':productId, 'action':action})
+        body:JSON.stringify({'productId': productId, 'action': action})
     })
-    //getting response
     .then((response) =>{
         return response.json()
     })
-    //getting output at console
     .then((data) =>{
-        console.log('data: ', data)
+        console.log('data:', data)
+        location.reload()
     })
+
 }
